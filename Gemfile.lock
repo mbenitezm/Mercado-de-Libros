@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -87,6 +88,8 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    paranoia (2.1.4)
+      activerecord (~> 4.0)
     puma (2.15.3)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -156,6 +159,8 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unread (0.7.1)
+      activerecord (>= 3)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -166,6 +171,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   better_errors
   byebug
   coffee-rails (~> 4.1.0)
@@ -174,6 +180,7 @@ DEPENDENCIES
   jquery-datatables-rails (~> 3.1.1)
   jquery-rails
   jquery-turbolinks
+  paranoia
   puma
   rails (= 4.2.4)
   sass-rails (~> 5.0)
@@ -186,6 +193,7 @@ DEPENDENCIES
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
+  unread
   web-console (~> 2.0)
 
 BUNDLED WITH

@@ -54,4 +54,7 @@ gem 'jquery-datatables-rails', '~> 3.1.1'
 gem 'font-awesome-rails'
 gem 'sweetalert-rails'
 gem 'sweet-alert-confirm'
+gem 'bcrypt'
+gem 'paranoia'
+gem 'unread'
 

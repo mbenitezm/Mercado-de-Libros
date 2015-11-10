@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require jquery.nested-fields
 //= require sweet-alert
 //= require sweet-alert-confirm
 //= require dataTables/jquery.dataTables

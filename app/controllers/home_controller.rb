@@ -1,4 +1,4 @@
 class HomeController < ApplicationController
-	def sign_in 
+	def welcome
 	end
 end
