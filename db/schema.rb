@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "edition"
     t.string   "editorial"
     t.string   "year"
-    t.string   "type"
+    t.string   "for_what"
     t.string   "price"
     t.integer  "user_id"
     t.boolean  "transacting", default: false 

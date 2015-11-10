@@ -6,6 +6,7 @@ class Book < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :price, presence: true
+	validates :for_what, presence: true
 	validates :image_url, presence: true
 
 	def owner_name

@@ -19,3 +19,11 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require_tree .
+
+$(document).ready(function() {
+    $('#myCarousel1 .carousel-inner > .item:first').addClass('active');
+ });
+
+$(document).ready(function() {
+    $('#myCarousel2 .carousel-inner > .item:first').addClass('active');
+ });

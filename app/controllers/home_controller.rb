@@ -1,11 +1,14 @@
 class HomeController < ApplicationController
-	before_action :require_login
-	
-	def welcome
-	end
+  before_action :require_login
 
-	private
-	def require_login
-		redirect_to login_path 	if !current_user
-	end
+  def welcome
+    @books_on_sale = Book.where(for_what: 'sale').order(:created_at).limit(5)
+    @books_on_purchase = Book.where(for_what: 'purchase').order(:created_at).
+        limit(5)
+  end
+
+  private
+  def require_login
+    redirect_to login_path 	if !current_user
+  end
 end
