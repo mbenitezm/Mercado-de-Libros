@@ -5,6 +5,8 @@ class Book < ActiveRecord::Base
 	has_one :exchange, dependent: :destroy
 
 	validates :name, presence: true
+	validates :price, presence: true
+	validates :image_url, presence: true
 
 	def owner_name
 		user.fullname

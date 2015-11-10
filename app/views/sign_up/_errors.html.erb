@@ -1,0 +1,7 @@
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.messages.each do |msg| %>
+     <p class="error-messages">*<%= msg.first %>  <%= msg.second %> </p>
+    <% end %>
+  </ul> 
+<% end %>

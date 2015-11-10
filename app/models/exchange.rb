@@ -3,13 +3,7 @@ class Exchange < ActiveRecord::Base
 
 	belongs_to :book
 	has_many :messages, inverse_of: :exchange, dependent: :destroy
-	has_many :exchange_users, inverse_of: :exchange, dependent: :destroy
-
-	def owner
-		exchange_users.first
-	end
-
-	def interested
-		exchange_users.second
-	end
+ 	belongs_to :owner, class_name: 'User'
+ 	belongs_to :interested, class_name: 'User'
+ 
 end
