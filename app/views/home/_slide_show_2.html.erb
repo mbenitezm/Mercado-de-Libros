@@ -1,0 +1,33 @@
+<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel2" data-slide-to="1"></li>
+    <li data-target="#myCarousel2" data-slide-to="2"></li>
+    <li data-target="#myCarousel2" data-slide-to="3"></li>
+    <li data-target="#myCarousel2" data-slide-to="4"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% @books_on_purchase.each do |b|%>
+      <div class="item">
+        <%=link_to image_tag(b.image_url), show_book_path(b) %>
+          <div class="carousel-caption">
+            <h3> <%=b.name %> </h3>
+            <p><%=b.price %></p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+    <span class="fa fa-caret-square-o-left fa-6" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+    <span class="fa fa-caret-square-o-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

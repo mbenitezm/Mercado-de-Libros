@@ -1,17 +1,17 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
-	acts_as_paranoid
+  acts_as_paranoid
 
   include BCrypt
 
-	has_many :books, inverse_of: :user, dependent: :destroy
-	has_many :messages, inverse_of: :user, dependent: :destroy
-	has_many :owning_exchanges, foreign_key: 'owner_id', class_name: 'Exchange',
+  has_many :books, inverse_of: :user, dependent: :destroy
+  has_many :messages, inverse_of: :user, dependent: :destroy
+  has_many :owning_exchanges, foreign_key: 'owner_id', class_name: 'Exchange',
       dependent: :destroy
   has_many :interested_exchanges, foreign_key: 'interested_id', 
       class_name: 'Exchange', dependent: :destroy
   
-	validates :fullname, presence: true
+  validates :fullname, presence: true
   validates :phone, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password_hash, presence: true, on: :update
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   attr_accessor :password_confirmation
 
   def is_admin?
-  	admin
+    admin
   end
 
   def password

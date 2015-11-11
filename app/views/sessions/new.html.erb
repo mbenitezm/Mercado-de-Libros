@@ -3,11 +3,11 @@
 <div id="login">
   <div id="triangle"></div>
   <h1>Login</h1>
-  <%= simple_form_for :sessions, url: login_action_path do |f| %>
+  <%=simple_form_for :sessions, url: login_action_path do |f| %>
     <%=render 'errors' %>
 
-    <%= f.input :email, placeholder: 'Email', label: false,input_html:{type: 'email'}, error: false %>
-    <%= f.input :password, placeholder: 'Password', label: false, input_html:{type: 'password'}, error: false %>
-    <%= f.button :submit, "Submit" %>
+    <%=f.input :email, placeholder: 'Email', label: false,input_html:{type: 'email'}, error: false %>
+    <%=f.input :password, placeholder: 'Password', label: false, input_html:{type: 'password'}, error: false %>
+    <%=f.button :submit, "Submit" %>
   <% end %>
 </div>

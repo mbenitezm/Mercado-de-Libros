@@ -1,17 +1,17 @@
 <div class="col-md-12">
-	<div class="well">
-		<h2> Publish book </h2>
-		<%= simple_form_for @book, url: add_book_action_path do |f| %>
+  <div class="well">
+    <h2> Publish book </h2>
+    <%=simple_form_for @book, url: add_book_action_path do |f| %>
     <%=render 'errors' %>
 
-    <%= f.input :name, placeholder: 'Name of book', label: false, error: false %>
-    <%= f.input :year, placeholder: 'Year of publication', label: false, error: false %>
-    <%= f.input :edition, placeholder: 'Edition', label: false, error: false %>
-    <%= f.input :editorial, placeholder: 'Editorial', label: false, error: false %>
-    <%= f.input :price, placeholder: 'Price', label: false, error: false %>
-    <%= f.input :image_url ,placeholder: 'Link to book cover image', label: false, error: false %>
-    <%= f.input :for_what, as: :select, placeholder: false, label: 'Buying or selling?', error: false, collection: ["purchase", "sale"], prompt: 'Buying or selling?' %>
-    <%= f.button :submit, "Publish book" %>
+    <%=f.input :name, placeholder: 'Name of book', label: false, error: false %>
+    <%=f.input :year, placeholder: 'Year of publication', label: false, error: false %>
+    <%=f.input :edition, placeholder: 'Edition', label: false, error: false %>
+    <%=f.input :editorial, placeholder: 'Editorial', label: false, error: false %>
+    <%=f.input :price, placeholder: 'Price', label: false, error: false %>
+    <%=f.input :image_url ,placeholder: 'Link to book cover image', label: false, error: false %>
+    <%=f.input :for_what, as: :select, placeholder: false, label: 'Buying or selling?', error: false, collection: ["purchase", "sale"], prompt: 'Buying or selling?' %>
+    <%=f.button :submit, "Publish book" %>
   <% end %>
-	</div>
+  </div>
 </div>

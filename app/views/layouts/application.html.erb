@@ -23,11 +23,11 @@
 
 <body>
   <% if session_on? %>
-    <%= render 'layouts/signed_in' %>
+    <%=render 'layouts/signed_in' %>
     <body style="background-image: none; background-color: rgba(51, 153, 204, 0.17);">
   <% end %>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <%=render 'layouts/messages' %>
+    <%=yield %>
 </body>
 
 </html>
