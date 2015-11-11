@@ -1,16 +1,16 @@
-<%=link_to "Login", login_path, id: "toggle-login", class: "button-special", style: "color:white" %>
+<%= link_to "Login", login_path, id: "toggle-login", class: "button-special", style: "color:white" %>
 
 <div id="login">
   <div id="triangle"></div>
   <h1>Registration form</h1>
-  <%=simple_form_for @user, url: sign_up_action_path do |f| %>
-    <%=render 'errors' %>
+  <%= simple_form_for @user, url: sign_up_action_path do |f| %>
+    <%= render 'errors' %>
 
-    <%=f.input :email, placeholder: 'Email', label: false,input_html:{class: 'form-control', type: 'email'}, error: false %>
-    <%=f.input :fullname, placeholder: 'Full name', label: false,input_html:{class: 'form-control', type: 'email'}, error:false %>
-    <%=f.input :phone, placeholder: 'Contact number', label: false,input_html:{class: 'form-control', type: 'email'}, error: false %>
-    <%=f.input :password, placeholder: 'Password', label: false, input_html:{class: 'form-control', type: 'password'}, error: false %>
-    <%=f.input :password_confirmation, placeholder: 'Password confirmation', label: false, input_html:{class: 'form-control', type: 'password'}, error: false %>
-    <%=f.button :submit, "Register" %>
+    <%= f.input :email, placeholder: 'Email', label: false,input_html:{class: 'form-control', type: 'email'}, error: false %>
+    <%= f.input :fullname, placeholder: 'Full name', label: false,input_html:{class: 'form-control', type: 'email'}, error:false %>
+    <%= f.input :phone, placeholder: 'Contact number', label: false,input_html:{class: 'form-control', type: 'email'}, error: false %>
+    <%= f.input :password, placeholder: 'Password', label: false, input_html:{class: 'form-control', type: 'password'}, error: false %>
+    <%= f.input :password_confirmation, placeholder: 'Password confirmation', label: false, input_html:{class: 'form-control', type: 'password'}, error: false %>
+    <%= f.button :submit, "Register" %>
   <% end %>
 </div>

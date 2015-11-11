@@ -1,7 +1,7 @@
 <% if @book.errors.any? %>
   <ul>
     <% @book.errors.messages.each do |msg| %>
-     <p class="error-messages">*<%=msg.first %>  <%=msg.second %> </p>
+     <p class="error-messages">*<%= msg.first %>  <%= msg.second %> </p>
     <% end %>
   </ul> 
 <% end %>

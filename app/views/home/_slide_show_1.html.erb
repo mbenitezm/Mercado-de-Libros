@@ -12,10 +12,10 @@
   <div class="carousel-inner" role="listbox">
     <% @books_on_sale.each do |b|%>
       <div class="item">
-        <%=link_to image_tag(b.image_url), show_book_path(b) %>
+        <%= link_to image_tag(b.image_url), show_book_path(b) %>
           <div class="carousel-caption">
-            <h3> <%=b.name %> </h3>
-            <p><%=b.price %></p>
+            <h3> <%= b.name %> </h3>
+            <p><%= b.price %></p>
           </div>
       </div>
     <% end %>
