@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
       setup_session
       redirect_to root_path
     else
-     flash[:error] = 'Wrong credentials, please try again'
-     redirect_to login_path
-   end
- end
+      flash[:error] = 'Wrong credentials, please try again'
+      redirect_to login_path
+    end
+  end
 
   def destroy
     reset_session
