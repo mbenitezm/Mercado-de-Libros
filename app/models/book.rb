@@ -9,8 +9,8 @@ class Book < ActiveRecord::Base
   validates :for_what, presence: true
   validates :image_url, presence: true
 
-  def owner_name
-    user.fullname
+  def owner
+    user
   end
 
   def self.on_sale

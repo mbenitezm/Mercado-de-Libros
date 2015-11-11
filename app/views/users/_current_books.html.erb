@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <center><h3>Books currently being announced: </h3></center>
+    <div style="max-height:200px;overflow:auto;">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Book</th>
+          <th class="no-sort"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @books_on_display.each do |book| %>
+          <tr>
+            <td><%= book.name %></td>
+            <td><%= link_to 'Detail', show_book_path(book), class:'btn btn-success btn-xs' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

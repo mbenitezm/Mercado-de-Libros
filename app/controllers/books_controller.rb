@@ -7,7 +7,9 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(object_params)
+    @book.user = current_user
       if @book.save
+      flash[:notice] = "Book added successfuly"
       redirect_to show_book_path(@book)
     else
       render :new
@@ -16,6 +18,14 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+  end
+
+  def sale_index
+    @books = Book.where(for_what: 'sale', transacting: false)
+  end
+
+  def purchase_index
+    @books = Book.where(for_what: 'purchase', transacting: false)
   end
 
 private

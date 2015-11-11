@@ -50,7 +50,6 @@ end
 gem 'puma'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
-gem 'jquery-datatables-rails', '~> 3.1.1'
 gem 'font-awesome-rails'
 gem 'sweetalert-rails'
 gem 'sweet-alert-confirm'

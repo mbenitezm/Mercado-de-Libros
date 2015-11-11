@@ -2,7 +2,6 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "fullname"
-    t.string   "email"
     t.string   "phone"
     t.string   "password_hash"
     t.boolean  "admin", default: false
@@ -28,7 +27,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "exchanges", force: :cascade do |t|
     t.integer  "book_id"
-    t.boolean  "waiting", default: false 
+    t.boolean  "finished", default: false 
     t.integer  "owner_id"
     t.integer  "interested_id"
     t.datetime "created_at"

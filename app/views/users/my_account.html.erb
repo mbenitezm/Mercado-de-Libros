@@ -1,0 +1,41 @@
+<div class="row">
+  <div class='col-md-6'>
+    <div class="well">
+      <h1> Your information </h1>
+      <h3> Name: <%= @user.fullname %> </h3>
+      <h3> Contact number: <%= @user.phone %></h3>
+      <h3> Email: <%= @user.email %> </h3> 
+      <br>
+      <%= link_to "Edit your information",edit_user_path(@user),class: 'btn btn-success' %>
+    </div>
+  </div>
+  <div class='col-md-6'>
+    <div class="well">
+      <%= render 'current_books' %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-6'>
+    <div class='well'>
+      <%= render 'owning_exchanges' %>
+    </div>
+  </div>
+  <div class='col-md-6'>
+    <div class='well'>
+      <%= render 'interested_exchanges' %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class='col-md-6'>
+    <div class='well'>
+      <%= render 'finished_owning_exchanges' %>
+    </div>
+  </div>
+  <div class='col-md-6'>
+    <div class='well'>
+      <%= render 'finished_interested_exchanges' %>
+    </div>
+  </div>
+</div>

@@ -259,9 +259,10 @@ th {
   .table th {
     background-color: #fff !important;
   }
-  .table-bordered th,
+  bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    background-color: red !important;
   }
 }
 @font-face {
@@ -2299,6 +2300,7 @@ th {
 }
 .table-bordered {
   border: 1px solid #ddd;
+  background-color: rgba(14, 65, 117, 0.36);
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,

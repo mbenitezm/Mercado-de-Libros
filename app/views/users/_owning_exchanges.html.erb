@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <center><h3>Owning transactions: </h3></center>
+    <div style="max-height:200px;overflow:auto;">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Book</th>
+          <th class="no-sort"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @owning_exchanges.each do |exchange| %>
+          <tr>
+            <td><%= exchange.book.name %></td>
+            <td><%= link_to 'Transaction', show_book_path(exchange.book), class:'btn btn-success btn-xs' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

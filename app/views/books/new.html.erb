@@ -10,7 +10,7 @@
     <%= f.input :editorial, placeholder: 'Editorial', label: false, error: false %>
     <%= f.input :price, placeholder: 'Price', label: false, error: false %>
     <%= f.input :image_url ,placeholder: 'Link to book cover image', label: false, error: false %>
-    <%= f.input :for_what, as: :select, placeholder: false, label: 'Buying or selling?', error: false, collection: ["purchase", "sale"], prompt: 'Buying or selling?' %>
+    <%= f.input :for_what, as: :select, placeholder: false, label: false, error: false, collection: ["purchase", "sale"], prompt: 'Buying or selling?' %>
     <%= f.button :submit, "Publish book" %>
   <% end %>
   </div>
