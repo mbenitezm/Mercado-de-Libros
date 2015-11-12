@@ -28,6 +28,7 @@ class ExchangesController < ApplicationController
     @interested = exchange.interested
     @messages = Message.where(exchange: exchange)
     @exchange = exchange
+    @message = Message.new
   end
 
   def finish

@@ -29,4 +29,8 @@ Rails.application.routes.draw do
   get 'my_account/:id', to: 'users#my_account', as: :my_account
   get 'edit_user/:id', to: 'users#edit', as: :edit_user
   patch 'edit_user/:id', to: 'users#update', as: :edit_user_action
+
+  #message routes
+  get 'add_message/:id', to: 'messages#create', as: :new_message
+  post 'add_message/:id', to: 'messages#create', as: :new_message_action
 end

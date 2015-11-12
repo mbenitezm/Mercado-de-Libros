@@ -1,0 +1,8 @@
+<% @messages.each do |m| %>
+	<div class="panel panel-default">
+	  <div class="panel-heading"><%= m.user.fullname %></div>
+	  <div class="panel-body">
+	    <%= m.text %>
+	  </div>
+	</div>
+<% end %>

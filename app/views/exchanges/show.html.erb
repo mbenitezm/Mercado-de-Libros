@@ -12,8 +12,12 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="well">
-      <h1> Messages </h1>
+    <div style="max-height:538px;overflow:auto;">
+      <div class="well">
+        <h1> Messages </h1>
+        <%= render 'message_form' %>
+        <%= render 'messages' %>
+      </div>
     </div>
   </div>
 </div>

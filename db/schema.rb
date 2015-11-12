@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "text"
     t.integer  "user_id"
     t.integer  "exchange_id"
-    t.integer  "message_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
