@@ -9,7 +9,5 @@ Andres Marcelo Garza Cantú
 
 -Favicon
 -Search
--Admin functions
--Messages
 -Implement sweet alerts
 -jsons

@@ -9,6 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
                 <%= link_to image_tag('logo.png'), root_path %>
@@ -29,6 +30,11 @@
                 <li>
                   <% if session_on? %>
                     <a href="<%= my_account_path(current_user) %>">My account</a>
+                  <% end %>
+                </li>
+                <li>
+                  <% if current_user.admin %>
+                    <a href="<%= users_path %>">Users</a>
                   <% end %>
                 </li>
             </ul>

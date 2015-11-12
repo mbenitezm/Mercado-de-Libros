@@ -24,11 +24,16 @@ Rails.application.routes.draw do
   get 'transaction/:id',   to: 'exchanges#show', as: :show_exchange
   get 'finish/:book_id', to: 'exchanges#finish', as: :finish_exchange
   post 'finish/:id',   to: 'exchanges#finish', as: :finish_exchange_action
+  get 'remove_exchange/:id', to: 'exchanges#remove', as: :delete_exchange
+  post 'remove_exchange/:id', to: 'exchanges#remove', as: :delete_exchange_action
 
   #User routes
   get 'my_account/:id', to: 'users#my_account', as: :my_account
   get 'edit_user/:id', to: 'users#edit', as: :edit_user
   patch 'edit_user/:id', to: 'users#update', as: :edit_user_action
+  get 'users', to: 'users#all_users', as: :users
+  get 'block/:id', to: 'users#change_state', as: :block
+  post 'block/:id', to: 'users#change_state', as: :block_action
 
   #message routes
   get 'add_message/:id', to: 'messages#create', as: :new_message

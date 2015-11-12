@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 users = User.create([
   {fullname: "Marcel Benítez", email:"marcelbm94@gmail.com", phone: "8115019160", password: "1234"},
-  {fullname: "Marcelo Garza", email:"amarcel@gmail.com", phone: "811511160", password: "1234"}
+  {fullname: "Marcelo Garza", email:"amarcel@gmail.com", phone: "811511160", password: "1234"},
+  {fullname: "Admin", email:"admin", phone: "811511160", password: "1234", admin:true}
   ])
 
 books_purchase = Book.create([

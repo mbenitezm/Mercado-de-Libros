@@ -5,6 +5,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "phone"
     t.string   "password_hash"
     t.boolean  "admin", default: false
+    t.boolean  "blocked", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"

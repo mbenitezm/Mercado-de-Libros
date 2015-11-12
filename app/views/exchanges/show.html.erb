@@ -9,6 +9,9 @@
       <p>Edition: <%= @exchange.book.edition %></p>
       <p>Editorial: <%= @exchange.book.editorial %></p>
       <p>Year: <%= @exchange.book.year %></p>
+      <% if current_user.admin %>
+        <%= link_to "Remove transaction", delete_exchange_action_path(@exchange.id), class:"btn btn-warning" %>
+      <% end %>
     </div>
   </div>
   <div class="col-md-6">

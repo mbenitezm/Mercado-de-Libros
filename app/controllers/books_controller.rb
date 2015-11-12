@@ -47,7 +47,7 @@ private
     redirect_to login_path 	if !current_user
   end
   def check_user(book)
-    if current_user != book.owner
+    if current_user != book.owner && !current_user.admin
       flash[:error] = 'You are not allowed to visit this page'
       redirect_to root_path
     end

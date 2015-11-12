@@ -28,6 +28,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def all_users
+    if current_user.admin
+      @users = User.all
+    else
+      redirect_to root_path
+    end
+  end
+
+  def change_state
+    if current_user.admin
+      user = User.find(params[:id])
+      user.blocked = !user.blocked
+      user.save
+      redirect_to users_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
   def object_params
     params.require(:user).permit(:fullname, :email, :phone, 

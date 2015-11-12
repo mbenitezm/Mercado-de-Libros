@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:sessions][:email])
-    if user && user.password == params[:sessions][:password]
+    if user && !user.blocked && user.password == params[:sessions][:password]
       setup_session
       redirect_to root_path
     else

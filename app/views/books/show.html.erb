@@ -21,7 +21,7 @@
     <% if @book.user != current_user && !@book.transacting %>
       <%= link_to "Add to transactions!", new_exchange_path(@book), class:"btn btn-primary",style: "color:white" %>
     <% end %>
-    <% if @book.user == current_user && !@book.transacting %>
+    <% if (@book.user == current_user && !@book.transacting) || (current_user.admin && !@book.transacting)  %>
       <%= link_to "Delete book", delete_book_path(@book), class:"btn btn-danger",style: "color:white" %>
     <% end %>
     </div>

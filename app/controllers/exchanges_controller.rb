@@ -39,6 +39,15 @@ class ExchangesController < ApplicationController
     redirect_to my_account_path(exchange.owner)
   end
 
+  def remove
+    exchange = Exchange.find(params[:id])
+    check_user_admin(exchange)
+    if exchange.destroy
+      flash[:notice] = "transaction deleted successfuly"
+      redirect_to root_path
+    end
+  end
+
   private
   def require_login
     redirect_to login_path 	if !current_user
@@ -55,7 +64,7 @@ class ExchangesController < ApplicationController
   end
 
   def check_users_show(exchange)
-    if current_user != exchange.owner && current_user != exchange.interested
+    if current_user != exchange.owner && current_user != exchange.interested && !current_user.admin
       flash[:error] = "You cannot access this page"
       redirect_to root_path
     end
@@ -64,6 +73,12 @@ class ExchangesController < ApplicationController
   def check_users_finish(exchange)
     if current_user != exchange.owner
       flash[:error] = "You cannot access this page"
+      redirect_to root_path
+    end
+  end
+
+  def check_user_admin(exchange)
+    if !current_user.admin
       redirect_to root_path
     end
   end
