@@ -18,8 +18,11 @@
     <h2> Edition: <%= @book.edition %> </h2>
     <h2> Editorial: <%= @book.editorial %> </h2>
     <h2> Year: <%= @book.year %> </h2>
-    <% if !@book.transacting %>
+    <% if @book.user != current_user && !@book.transacting %>
       <%= link_to "Add to transactions!", new_exchange_path(@book), class:"btn btn-primary",style: "color:white" %>
+    <% end %>
+    <% if @book.user == current_user && !@book.transacting %>
+      <%= link_to "Delete book", delete_book_path(@book), class:"btn btn-danger",style: "color:white" %>
     <% end %>
     </div>
   </div>

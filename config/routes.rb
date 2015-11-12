@@ -15,13 +15,18 @@ Rails.application.routes.draw do
   get 'book/:id', to: 'books#show', as: :show_book
   get 'books_on_sale', to: 'books#sale_index', as: :sale_books
   get 'books_on_purchase', to: 'books#purchase_index', as: :purchase_books
+  get 'remove/:id', to: 'books#remove', as: :delete_book
+  post 'remove/:id', to: 'books#remove', as: :delete_book_action
 
   #Exchanges routes
   get 'transact/:book_id', to: 'exchanges#create', as: :new_exchange
   get 'transact/:book_id', to: 'exchanges#create', as: :new_exchange_action
+  get 'transaction/:id',   to: 'exchanges#show', as: :show_exchange
+  get 'finish/:book_id', to: 'exchanges#finish', as: :finish_exchange
+  post 'finish/:id',   to: 'exchanges#finish', as: :finish_exchange_action
 
   #User routes
-    get 'my_account/:id', to: 'users#my_account', as: :my_account
-    get 'edit/:id', to: 'users#edit', as: :edit_user
-    post 'edit/:id', to: 'users#update, as: :edit_user_action'
+  get 'my_account/:id', to: 'users#my_account', as: :my_account
+  get 'edit_user/:id', to: 'users#edit', as: :edit_user
+  patch 'edit_user/:id', to: 'users#update', as: :edit_user_action
 end

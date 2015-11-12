@@ -28,6 +28,15 @@ class BooksController < ApplicationController
     @books = Book.where(for_what: 'purchase', transacting: false)
   end
 
+  def remove
+    book = Book.find(params[:id])
+    check_user(book)
+    if book.destroy
+      flash[:notice] = "Book deleted successfuly"
+      redirect_to root_path
+    end
+  end
+
 private
   def object_params
     params.require(:book).permit(:name, :image_url, :year, 
@@ -36,5 +45,11 @@ private
 
   def require_login
     redirect_to login_path 	if !current_user
+  end
+  def check_user(book)
+    if current_user != book.owner
+      flash[:error] = 'You are not allowed to visit this page'
+      redirect_to root_path
+    end
   end
 end

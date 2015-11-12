@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+      <h1> Book information </h1>
+      <p><%= image_tag @exchange.book.image_url, style:'max-height:240px' %></p>
+      <p>Price: $<%= @exchange.book.price %></p>
+      <p>For <%= @exchange.book.for_what %></p>
+      <p>Name: <%= @exchange.book.name %> </p>
+      <p>Edition: <%= @exchange.book.edition %></p>
+      <p>Editorial: <%= @exchange.book.editorial %></p>
+      <p>Year: <%= @exchange.book.year %></p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h1> Messages </h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+      <h1> Owner of publication </h1>
+      <h3> Name: <%= @owner.fullname %> </h3>
+      <h3> Contact number: <%= @owner.phone %></h3>
+      <h3> Email: <%= @owner.email %> </h3>
+      <% if current_user == @owner %>
+        <%= link_to "End transaction", finish_exchange_path(@exchange.id), class:"btn btn-warning" %>
+      <% end %> 
+    </div>
+  </div>
+  <div class="col-md-6">
+      <div class="well">
+      <h1> Interested in publication </h1>
+      <h3> Name: <%= @interested.fullname %> </h3>
+      <h3> Contact number: <%= @interested.phone %></h3>
+      <h3> Email: <%= @interested.email %> </h3> 
+    </div>
+  </div>
+</div>

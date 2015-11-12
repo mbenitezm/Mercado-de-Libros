@@ -13,7 +13,7 @@
         <% @finished_owning_exchanges.each do |exchange| %>
           <tr>
             <td><%= exchange.book.name %></td>
-            <td><%= link_to 'Transaction', show_book_path(exchange.book), class:'btn btn-success btn-xs disabled' %></td>
+            <td><%= link_to 'Transaction', show_exchange_path(exchange.id), class:'btn btn-success btn-xs disabled' %></td>
           </tr>
         <% end %>
       </tbody>

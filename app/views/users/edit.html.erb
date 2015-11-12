@@ -1,6 +1,6 @@
 <div id="login">
   <h1>Edit your information</h1>
-  <%= simple_form_for @user, url: sign_up_action_path do |f| %>
+  <%= simple_form_for @user, url: edit_user_action_path(@user) do |f| %>
     <%= render 'errors' %>
 
     <%= f.input :email, placeholder: 'Email', label: false,input_html:{class: 'form-control', type: 'email'}, error: false %>

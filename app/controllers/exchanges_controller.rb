@@ -21,6 +21,23 @@ class ExchangesController < ApplicationController
   	end
   end
 
+  def show
+    exchange = Exchange.find(params[:id])
+    check_users_show(exchange)
+    @owner = exchange.owner
+    @interested = exchange.interested
+    @messages = Message.where(exchange: exchange)
+    @exchange = exchange
+  end
+
+  def finish
+    exchange = Exchange.find(params[:book_id])
+    check_users_finish(exchange)
+    exchange.update(finished: true)
+    flash[:notice] = "Transaction ended"
+    redirect_to my_account_path(exchange.owner)
+  end
+
   private
   def require_login
     redirect_to login_path 	if !current_user
@@ -34,5 +51,19 @@ class ExchangesController < ApplicationController
   def change_book_state(book)
     book.transacting = !book.transacting
     book.save
+  end
+
+  def check_users_show(exchange)
+    if current_user != exchange.owner && current_user != exchange.interested
+      flash[:error] = "You cannot access this page"
+      redirect_to root_path
+    end
+  end
+
+  def check_users_finish(exchange)
+    if current_user != exchange.owner
+      flash[:error] = "You cannot access this page"
+      redirect_to root_path
+    end
   end
 end
