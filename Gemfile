@@ -57,3 +57,7 @@ gem 'bcrypt'
 gem 'paranoia'
 gem 'unread'
 
+group :production do
+  gem 'rails_12factor'
+end
+
