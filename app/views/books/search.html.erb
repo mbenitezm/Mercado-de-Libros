@@ -3,7 +3,7 @@
     <div class="well">
       <h1>Search your book by name</h1>
       <%= simple_form_for @book, url: search_result_action_path do |f| %>
-        <%= f.input :name, placeholder: 'Book name', label: false, error: false %>
+        <%= f.input :name, placeholder: 'Book name, author or editorial', label: false, error: false %>
         <%= f.button :submit, "Search" %>
       <% end %>
     </div>

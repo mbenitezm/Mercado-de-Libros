@@ -42,7 +42,7 @@ class BooksController < ApplicationController
 
   def search_result
     name = params[:book][:name]
-    @books = Book.search(name)
+    @books = Book.search(name).where(transacting: false)
   end
 
   private
