@@ -7,8 +7,9 @@ Andres Marcelo Garza Cantú
 
 ---------Pending-----------
 
-Favicon
-Search
-Admin functions
-Messages
-Implement sweet alerts
+-Favicon
+-Search
+-Admin functions
+-Messages
+-Implement sweet alerts
+-jsons
