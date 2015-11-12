@@ -4,3 +4,11 @@ Web developement final project
 
 Marcel Benítez Martínez
 Andres Marcelo Garza Cantú
+
+---------Pending-----------
+
+Favicon
+Search
+Admin functions
+Messages
+Implement sweet alerts
