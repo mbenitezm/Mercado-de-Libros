@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get 'books_on_purchase', to: 'books#purchase_index', as: :purchase_books
   get 'remove/:id', to: 'books#remove', as: :delete_book
   post 'remove/:id', to: 'books#remove', as: :delete_book_action
+  get 'search', to: 'books#search', as: :search_book
+  get 'search_result', to: 'books#search_result', as: :search_result
+  post 'search_result', to: 'books#search_result', as: :search_result_action
 
   #Exchanges routes
   get 'transact/:book_id', to: 'exchanges#create', as: :new_exchange

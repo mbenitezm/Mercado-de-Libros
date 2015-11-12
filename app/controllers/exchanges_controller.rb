@@ -23,12 +23,14 @@ class ExchangesController < ApplicationController
 
   def show
     exchange = Exchange.find(params[:id])
+    exchange.mark_as_read! :for => current_user
     check_users_show(exchange)
     @owner = exchange.owner
     @interested = exchange.interested
     @messages = Message.where(exchange: exchange)
     @exchange = exchange
     @message = Message.new
+
   end
 
   def finish

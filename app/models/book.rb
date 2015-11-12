@@ -20,4 +20,13 @@ class Book < ActiveRecord::Base
   def self.on_purchase
     where(type: 'purchase')
   end
+
+  def self.search(search)
+    if search
+      where('name LIKE ? or author LIKE ? or editorial LIKE ?' ,"%#{search}%",
+          "%#{search}%","%#{search}%")
+    else
+      all
+    end
+  end
 end

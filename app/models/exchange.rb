@@ -6,4 +6,6 @@ class Exchange < ActiveRecord::Base
   belongs_to :owner, class_name: 'User'
   belongs_to :interested, class_name: 'User'
 
+  acts_as_readable on: :updated_at
+
 end

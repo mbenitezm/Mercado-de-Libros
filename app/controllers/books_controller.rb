@@ -36,8 +36,16 @@ class BooksController < ApplicationController
       redirect_to root_path
     end
   end
+  def search
+    @book = Book.new
+  end
 
-private
+  def search_result
+    name = params[:book][:name]
+    @books = Book.search(name)
+  end
+
+  private
   def object_params
     params.require(:book).permit(:name, :image_url, :year, 
       :edition, :editorial, :user_id, :for_what, :price)

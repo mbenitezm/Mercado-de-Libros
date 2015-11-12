@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  <%= favicon_link_tag 'favicon.png' %>
 
   <title>Mercado de Libros Tec</title>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,7 +26,7 @@
     <%= render 'layouts/signed_in' %>
     <body style="background-image: none; background-color: rgba(51, 153, 204, 0.17);">
   <% end %>
-    <%= render 'layouts/messages' %>
+  <%= render 'layouts/messages' %>
     <div class="container-fluid">
       <%= yield %>
     </div>

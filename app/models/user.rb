@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates_confirmation_of :password
 
+  acts_as_reader
+
   attr_accessor :password 
   attr_accessor :password_confirmation
 

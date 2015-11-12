@@ -1,25 +1,29 @@
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <center><h2>Books on sale</h2></center>
-    <div style="max-height:440px;overflow:auto;">
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th>Book</th>
-          <th class="no-sort">Price</th>
-          <th class="no-sort"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @books.each do |book| %>
+<div class="well">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <center><h2>Books on sale</h2></center>
+      <div style="max-height:440px;overflow:auto;">
+      <table class="table table-bordered table-hover">
+        <thead>
           <tr>
-            <td><%= book.name %></td>
-            <td><%= book.price %></td>
-            <td><%= link_to 'Detail', show_book_path(book), class:'btn btn-success btn-xs' %></td>
+            <th>Book</th>
+            <th class="no-sort">Author</th>
+            <th class="no-sort">Price</th>
+            <th class="no-sort"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td><%= book.name %></td>
+              <td><%= book.author %></td>
+              <td><%= book.price %></td>
+              <td><%= link_to 'Detail', show_book_path(book), class:'btn btn-success btn-xs' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
     </div>
   </div>
 </div>

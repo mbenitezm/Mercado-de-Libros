@@ -1,6 +1,47 @@
-<% if flash[:error] -%>
-  <div class="alert alert-danger"><%= flash[:error] %></div>
-<% end %>
-<% if flash[:notice] %>
-		<div class="alert alert-success"><%= flash[:notice] %> </div>
+<!-- Flash bootstrap element -->
+<% unless flash.empty? %>
+  <% [:success, :info, :input, :notice, :error].each do |condition| %>
+    <% if flash[condition] %>
+      <% if condition == :info %>
+        <% kind = :warning %>
+        <script>
+          swal(
+            { 
+             title: "New notification!", 
+             text: "<%= flash[condition] %>", 
+             type: "<%= kind || condition %>",
+             timer: 3000
+           }
+         );         
+        </script> 
+        <% flash.clear%>
+      <% end %>
+      <% if condition == :notice %>
+        <% kind = :success %>
+        <script>
+          swal(
+            { 
+             title: "Success", 
+             text: "<%= flash[condition] %>", 
+             type: "<%= kind || condition %>"
+           }
+         );         
+        </script> 
+        <% flash.clear%>
+      <% end %>
+      <% if condition == :error %>
+        <% kind = :error %>
+        <script>
+          swal(
+            { 
+             title: "Error", 
+             text: "<%= flash[condition] %>", 
+             type: "<%= kind || condition %>"
+           }
+         );         
+        </script> 
+        <% flash.clear%>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>

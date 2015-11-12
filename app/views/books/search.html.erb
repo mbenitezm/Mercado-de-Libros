@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="well">
+      <h1>Search your book by name</h1>
+      <%= simple_form_for @book, url: search_result_action_path do |f| %>
+        <%= f.input :name, placeholder: 'Book name', label: false, error: false %>
+        <%= f.button :submit, "Search" %>
+      <% end %>
+    </div>
+  </div>
+</div>
