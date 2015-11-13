@@ -7,6 +7,7 @@
         <tr>
           <th>Email</th>
           <th>Name</th>
+          <th></th>
           <th class="no-sort"></th>
         </tr>
       </thead>
@@ -15,6 +16,7 @@
           <tr>
             <td><%= user.email %></td>
             <td><%= user.fullname %></td>
+            <td><%= link_to 'Transactions', admin_exchanges_path(user.id), class:'btn btn-warning btn-xs' %></td>
             <% if user.blocked %>
               <td><%= link_to 'Unblock', block_action_path(user.id), class:'btn btn-success btn-xs' %></td>
             <% else %>

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <center><h3>User transactions </h3></center>
+    <div style="max-height:440px;overflow:auto;">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th class="no-sort"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @user_owning_exchanges %>
+          <% @user_owning_exchanges.each do |exchange| %>
+            <tr>
+              <td><%= exchange.id %></td>
+              <td><%= link_to 'Transaction', show_exchange_path(exchange), class:'btn btn-success' %></td>
+            </tr>
+          <% end %>
+        <% end %>
+        <% if @user_interested_exchanges %>
+          <% @user_interested_exchanges.each do |exchange| %>
+            <tr>
+              <td><%= exchange.id %></td>
+              <td><%= link_to 'Transaction', show_exchange_path(exchange), class:'btn btn-success' %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

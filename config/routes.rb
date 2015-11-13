@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   post 'finish/:id',   to: 'exchanges#finish', as: :finish_exchange_action
   get 'remove_exchange/:id', to: 'exchanges#remove', as: :delete_exchange
   post 'remove_exchange/:id', to: 'exchanges#remove', as: :delete_exchange_action
+  get 'all_transactions/:id', to: 'exchanges#admin_exchanges', as: :admin_exchanges
+
 
   #User routes
   get 'my_account/:id', to: 'users#my_account', as: :my_account

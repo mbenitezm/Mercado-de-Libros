@@ -50,6 +50,16 @@ class ExchangesController < ApplicationController
     end
   end
 
+  def admin_exchanges
+    if current_user.admin
+      @user_owning_exchanges = Exchange.where(owner: params[:id])
+      @user_interested_exchanges = Exchange.where(interested: params[:id])
+    else
+      flash[:eror] = "You are not allowed here"
+      redirect_to root_path
+    end
+  end
+
   private
   def require_login
     redirect_to login_path 	if !current_user
