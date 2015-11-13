@@ -20,9 +20,13 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     check_user(@user)
-    if @user.update(object_params)
-      flash[:notice] = "Account information changed successfuly"
-      redirect_to my_account_path(@user)
+    if params[:user][:password] != "" && params[:user][:password_confirmation]
+      if @user.update(object_params)
+        flash[:notice] = "Account information changed successfuly"
+        redirect_to my_account_path(@user)
+      else
+        render :edit
+      end
     else
       render :edit
     end
