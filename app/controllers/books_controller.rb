@@ -41,8 +41,12 @@ class BooksController < ApplicationController
   end
 
   def search_result
-    name = params[:book][:name]
-    @books = Book.search(name).where(transacting: false)
+    if !params[:book]
+      redirect_to search_book_path
+    else
+      name = params[:book][:name]
+      @books = Book.search(name).where(transacting: false)
+    end
   end
 
   private

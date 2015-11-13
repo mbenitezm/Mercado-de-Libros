@@ -3,9 +3,9 @@ class HomeController < ApplicationController
 
   def welcome
     @books_on_sale = Book.where(for_what: 'sale', transacting: false).
-        order(:created_at).limit(5)
+        order(:created_at).limit(10)
     @books_on_purchase = Book.where(for_what: 'purchase', transacting: false).
-        order(:created_at).limit(5)
+        order(:created_at).limit(10)
   end
 
   private
