@@ -4,7 +4,3 @@ Web developement final project
 
 Marcel Benítez Martínez
 Andres Marcelo Garza Cantú
-
----------Pending-----------
-
--jsons
